@@ -6,10 +6,9 @@ function Product() {
   const [products, setProducts] = useState([]);
 
   const getProduct = () => {
-    axios
-      .get("https://api.escuelajs.co/api/v1/products")
-      .then((res) => setProducts(res.data))
-      .catch((err) => console.log(err));
+   axios.get("https://dummyjson.com/products?limit=30")
+  .then((res) => setProducts(res.data.products))
+  .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -25,14 +24,13 @@ function Product() {
 
         <div className="grid gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 mt-10 px-4 sm:px-10">
           {products.map((item) => {
-            // 1. Wixii ka baxsan URL sax ah ka sifee liiska sawirrada (mararka qaar API-gu wuxuu soo dhex diraa ["[\"https://...\"]"])
             let imageUrl = "https://via.placeholder.com/600?text=No+Image+Available";
             
             if (item.images && item.images.length > 0) {
               // Halkan waxaan ku nadiifinaynaa haddii uu sanamyada API-gu wata calaamado khaldan [] ama ""
               const cleanUrl = item.images[0].replace(/[\[\]"]/g, "");
               if (cleanUrl.startsWith("http")) {
-                imageUrl = cleanUrl;
+                imageUrl = item.thumbnail;
               }
             }
 
@@ -43,10 +41,9 @@ function Product() {
               >
                 <div className="w-full aspect-square bg-gray-50 overflow-hidden relative group">
                   <img
-                    src={imageUrl} // Halkan waxaan u dhiibnay URL-kii la sifeeyay
+                    src={imageUrl} 
                     alt={item.title}
                     className="w-full h-full object-center object-cover group-hover:scale-105 transition-transform duration-300"
-                    // 2. Haddii uu sawirku si uun u jabo (404), kani wuxuu gelinayaa sawir caalami ah
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = "https://via.placeholder.com/600?text=No+Image+Available";
