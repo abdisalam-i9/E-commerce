@@ -10,12 +10,12 @@ import About from "./Component/About"
 function App(){
    return <>
   <Header/>
-  {/* <Routes>
+  <Routes>
     <Route path='/' element={<Home/>} />
-    <Route path="/product"  element={<Product Data={Data}  />}  />
+    {/* <Route path="/product"  element={<Product Data={Data}  />}  /> */}
     <Route path="/product/:id"  element={<View  />}  />
 
-  </Routes> */}
+  </Routes>
 
   </>
 }

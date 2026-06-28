@@ -6,6 +6,7 @@ import Popular from './Popular';
 function Home() {
   return (
     <>
+    <Hero/>
     </>
   );
 }

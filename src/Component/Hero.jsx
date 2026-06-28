@@ -9,8 +9,12 @@ function Hero() {
   const getProduct = () => {
     axios
       .get("https://api.escuelajs.co/api/v1/products")
-      .then((res) => setProducts(res.data))
-      .catch((err) => console.log(err));
+      .then((response) => {
+        setProducts(response.data); 
+      })
+      .catch((error) => {
+        console.error("Waxaa dhacay khalad marka xogta la keenayay:", error);
+      });
   };
 
   useEffect(() => {
@@ -29,6 +33,7 @@ function Hero() {
               Ku Soo Dhowow Mustaqbalka Adeegga Online-ka!
             </h1>
             <p className="text-lg text-indigo-100">
+              {/* Haddii aad rabto inaad halkan geliso faahfaahinta alaabta API-ga: {item ? item.title : 'Xogta waa la keenayaa...'} */}
               Halkan ka hel agabka ugu tayada sarreeya, qiimaha ugu jaban, iyo soo gaarsiin degdeg ah oo albaabkaaga ah.
             </p>
             <div className="flex space-x-4">
@@ -44,7 +49,7 @@ function Hero() {
           <div className="hidden md:block">
             {item && (
               <img 
-                src={item.images} 
+                src={item.images[0]} 
                 alt={item.title} 
                 className="rounded-2xl shadow-2xl w-full object-cover h-96" 
               />
