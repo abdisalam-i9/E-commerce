@@ -10,13 +10,13 @@ function Header() {
     <>
       <header className="flex items-center justify-between p-4 bg-white shadow-md relative">
         <Link to="/" className="text-2xl font-bold text-blue-600">
-          Hayat-Market
+          E-commerce
         </Link>
 
         <ul className="hidden md:flex gap-6 text-gray-700 font-medium">
           <li className="hover:text-blue-600 cursor-pointer"><Link to="/">Home</Link></li>
           <li className="hover:text-blue-600 cursor-pointer"><Link to="/Product">Product</Link></li>
-          <li className="hover:text-blue-600 cursor-pointer"><Link to="/about">About</Link></li>
+          <li className="hover:text-blue-600 cursor-pointer"><Link to="/Blog">Blog</Link></li>
           <li className="hover:text-blue-600 cursor-pointer"><Link to="/contact">contact</Link></li>
         </ul>
 

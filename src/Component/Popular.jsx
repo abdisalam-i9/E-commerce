@@ -1,4 +1,4 @@
-import Data from "./Data";
+import Data from "./BlogData";
 import { Link } from "react-router-dom";
 
 function Popular() {
