@@ -34,7 +34,7 @@ function Header() {
           <ul className="absolute top-full left-0 w-full bg-white flex flex-col items-center gap-4 py-4 shadow-lg md:hidden z-50">
             <li className="hover:text-blue-600 cursor-pointer" onClick={() => setopen(false)}><Link to="/">Home</Link></li>
             <li className="hover:text-blue-600 cursor-pointer" onClick={() => setopen(false)}><Link to="/Product">product</Link></li>
-            <li className="hover:text-blue-600 cursor-pointer" onClick={() => setopen(false)}><Link to="/contact">Contact</Link></li>
+            <li className="hover:text-blue-600 cursor-pointer" onClick={() => setopen(false)}><Link to="/Blog">Blog</Link></li>
             <li className="hover:text-blue-600 cursor-pointer" onClick={() => setopen(false)}><Link to="/cart">Cart</Link></li>
           </ul>
         )}
